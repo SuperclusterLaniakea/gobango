@@ -1,0 +1,32 @@
+[package]
+name = "gobango"
+version = "1.0.0"
+edition = "2021"
+description = "GobanGo 围棋程序：19 路棋盘、三难度人机对弈、中国规则计分、GTP 协议、GUI"
+license = "MIT"
+
+[lib]
+name = "gobango"
+path = "src/lib.rs"
+
+[[bin]]
+name = "gobango"
+path = "src/main.rs"
+
+[dependencies]
+eframe = "0.28.1"
+rand = "0.8.7"
+# GPU 计算（批量走子 playout）：可选特性，无 GPU 时自动回退 CPU
+wgpu = { version = "0.19", default-features = false, features = ["wgsl", "vulkan-portability", "metal"] }
+bytemuck = { version = "1.25", features = ["derive"] }
+pollster = "0.3"
+tract-onnx = "0.21"
+
+[dev-dependencies]
+# 离线校验 WGSL 着色器语法/语义
+naga = "0.19"
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = "thin"

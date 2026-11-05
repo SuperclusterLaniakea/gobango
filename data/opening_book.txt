@@ -1,0 +1,10 @@
+# GobanGo 开局库
+# 格式：每行一局棋，着法以分号分隔（颜色 + SGF 坐标），可自定义追加。
+# 中级难度使用前 10 手，高级难度使用前 50 手；局面前缀完全匹配时按库中着法落子。
+
+B Q16; W D4; B R4; W D16; B Q3; W C4; B C16; W Q14; B C3; W R16
+B Q16; W D4; B R4; W D16; B Q3; W C4; B C16; W Q14; B Q4; W C3
+B Q16; W D4; B C3; W C16; B R4; W D16; B Q3; W R3; B C4; W Q14
+B Q16; W Q4; B D16; W D4; B R16; W R4; B C16; W C4; B Q3; W D3
+B Q16; W Q4; B D16; W D4; B R16; W R4; B C16; W C4; B D3; W Q3
+B Q16; W Q4; B C3; W D4; B R16; W R4; B D16; W C16; B Q3; W D3
